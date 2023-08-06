@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Configure MemCache</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('manual_resize_pool') }}" method="post">
+    <script type="text/javascript">
+
+    var clicks = {{ pool_count }};
+    function decrement() {
+        if (clicks <= 1) {
+            document.getElementById("valid").innerHTML = "Invalid! Memcache cannot be lower than 1."
+            clicks = 1;
+        }
+        else {
+            document.getElementById("valid").innerHTML = "Valid"
+            clicks -= 1;
+        }
+        document.getElementById("temp").value = clicks;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    function increment() {
+        if (clicks >= 8) {
+            document.getElementById("valid").innerHTML = "Invalid! Memcache cannot be higher than 8."
+            clicks = 8;
+        }
+        else {
+            document.getElementById("valid").innerHTML = "Valid"
+            clicks += 1;
+        }
+        document.getElementById("temp").value = clicks;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    function submit_button() {
+        return clicks;
+    }
+    </script>
+    <button type="button" onclick="increment()">+1 node</button>
+    <button type="button" onclick="decrement()">-1 node</button>
+    <p>Current Node Count: <a id="clicks">{{ pool_count }}</a></p>
+    <p>Memcache Pool Status: <a id="valid">Valid</a></p>
+
+    <input type="hidden" id="temp" name="pool_count"/>
+    <input type="submit" value="resize_pool"/>
+
+</body></html>
+</form>
+{% endblock %}

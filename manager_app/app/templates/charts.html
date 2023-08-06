@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart</title>
+    <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
+</head>
+<body style=" background-color: mediumaquamarine;">
+    <div style="width:800px; height: 400px; margin: auto">
+        <canvas id="no_nodes"></canvas>
+    </div>
+    <div style="width:800px; height: 400px; margin: auto">
+        <canvas id="miss_rate"></canvas>
+    </div>
+    <div style="width:800px; height: 400px; margin: auto">
+        <canvas id="hit_rate"></canvas>
+    </div>
+    <div style="width:800px; height: 400px; margin: auto">
+        <canvas id="no_items"></canvas>
+    </div>
+    <div style="width:800px; height: 400px; margin: auto">
+        <canvas id="total_size"></canvas>
+    </div>
+    <div style="width:800px; height: 400px; margin: auto">
+        <canvas id="no_request"></canvas>
+    </div>
+<script>
+    const ctx_node = document.getElementById('no_nodes').getContext('2d');
+    const labels = Array.from({length: 30}, (_,i) => i+1)
+    const data_node = {
+        labels: labels,
+        datasets: [{
+            data: {{ no_nodes }},
+            fill: false,
+            borderColor: 'blue',
+            backgroundColor: ['red'],
+            pointStyle: 'circle',
+            pointRadius: 6,
+            pointHoverRadius: 10,
+            tension: 0.1
+        }]
+    };
+    const config_node = {
+        type: 'line',
+        data: data_node,
+        options: {
+
+            responsive: true,
+
+            interaction: {
+                intersect: false,
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Number of Nodes in Past 30 Minutes'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Time'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Nodes'
+                    }
+                }
+            }
+        }
+    };
+
+    new Chart(ctx_node, config_node);
+
+
+    const ctx1 = document.getElementById('miss_rate').getContext('2d');
+    const data1 = {
+        labels: labels,
+        datasets: [{
+            data: {{ miss_rate_list }},
+            fill: false,
+            borderColor: 'blue',
+            backgroundColor: ['red'],
+            pointStyle: 'circle',
+            pointRadius: 6,
+            pointHoverRadius: 10,
+            tension: 0.1
+        }]
+    };
+    const config1 = {
+        type: 'line',
+        data: data1,
+        options: {
+
+            responsive: true,
+
+            interaction: {
+                intersect: false,
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Miss Rate in Past 30 Minutes'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Time'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Miss Rate'
+                    }
+                }
+            }
+        }
+    };
+
+    new Chart(ctx1, config1);
+
+
+    const ctx2 = document.getElementById('hit_rate').getContext('2d');
+    const data2 = {
+        labels: labels,
+        datasets: [{
+            data: {{ hit_rate_list }},
+            fill: false,
+            borderColor: 'blue',
+            backgroundColor: ['red'],
+            pointStyle: 'circle',
+            pointRadius: 6,
+            pointHoverRadius: 10,
+            tension: 0.1
+        }]
+    };
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {
+
+            responsive: true,
+
+            interaction: {
+                intersect: false,
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Hit Rate in Past 30 Minutes'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Time'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Hit Rate'
+                    }
+                }
+            }
+        }
+    };
+    new Chart(ctx2, config2);
+
+
+    const ctx3 = document.getElementById('no_items').getContext('2d');
+    const data3 = {
+        labels: labels,
+        datasets: [{
+            data: {{ no_items_list }},
+            fill: false,
+            borderColor: 'blue',
+            backgroundColor: ['red'],
+            pointStyle: 'circle',
+            pointRadius: 6,
+            pointHoverRadius: 10,
+            tension: 0.1
+        }]
+    };
+    const config3 = {
+        type: 'line',
+        data: data3,
+        options: {
+
+            responsive: true,
+
+            interaction: {
+                intersect: false,
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Number of Items in Past 30 Minutes'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Time'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Items'
+                    }
+                }
+            }
+        }
+    };
+    new Chart(ctx3, config3);
+
+
+    const ctx4 = document.getElementById('total_size').getContext('2d');
+    const data4 = {
+        labels: labels,
+        datasets: [{
+            data: {{ total_size_list }},
+            fill: false,
+            borderColor: 'blue',
+            backgroundColor: ['red'],
+            pointStyle: 'circle',
+            pointRadius: 6,
+            pointHoverRadius: 10,
+            tension: 0.1
+        }]
+    };
+    const config4 = {
+        type: 'line',
+        data: data4,
+        options: {
+
+            responsive: true,
+
+            interaction: {
+                intersect: false,
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Total Size in Past 30 Minutes'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Time'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Total Size'
+                    }
+                }
+            }
+        }
+    };
+    new Chart(ctx4, config4);
+
+
+    const ctx5 = document.getElementById('no_request').getContext('2d');
+    const data5 = {
+        labels: labels,
+        datasets: [{
+            data: {{ no_request_list }},
+            fill: false,
+            borderColor: 'blue',
+            backgroundColor: ['red'],
+            pointStyle: 'circle',
+            pointRadius: 6,
+            pointHoverRadius: 10,
+            tension: 0.1
+        }]
+    };
+    const config5 = {
+        type: 'line',
+        data: data5,
+        options: {
+
+            responsive: true,
+
+            interaction: {
+                intersect: false,
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Number of Requests in Past 30 Minutes'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Time'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Requests'
+                    }
+                }
+            }
+        }
+    };
+    new Chart(ctx5, config5);
+</script>
+
+</body>
+</html>

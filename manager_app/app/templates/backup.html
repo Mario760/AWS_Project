@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Backup Databases</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('backup_db')}}" method="post">
+    <label>Backup Database:</label>
+    <input type="submit" value="backup_db" />
+</form>
+{% endblock %}

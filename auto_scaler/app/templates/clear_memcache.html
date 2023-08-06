@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Clear MemCache</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('clear')}}" method="post">
+    <label>Clear:</label>
+    <input type="submit" value="clear" />
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block page_title %}
+    {% endblock %}
+    <style>
+        body {
+            background-color: mediumaquamarine;
+            text-align: center;
+
+        }
+        .footer{
+            position:absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="body-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer">
+        <button class="home_button"><a href="/login_page">Back to Home</a></button><br><br>
+        <p>Manage Key Value Images From ECE1779 Group 3 &nbsp &Copyright 2022</p>
+    </div>
+</body>
+<footer>
+</footer>
+</html>

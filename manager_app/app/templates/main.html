@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Very Simple Web App</title>
+    <style>
+        body {background-color: mediumaquamarine;
+              text-align: center;
+
+        }
+        .home_button{
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="dev/config_memcache">Configure Memcache</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="dev/resize_pool">Resize Pool</a></button><br>
+
+    <!-- <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="invalidate_keys">Invalidate Keys</a></button><br> -->
+    <!-- <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="clear_memcache">Clear Memcache</a></button><br> -->
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="dev/display_db_keys">Display Database Keys</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="dev/display_memcache_keys">Display Memcache Keys</a></button><br>
+
+
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="dev/clear_memcache">Clear Memcache</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="dev/delete_all_data">Delete All Data</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="dev/charts">Show Statistics</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="dev/backup">Backup Databases</a></button>
+
+
+{% endblock %}
+
+

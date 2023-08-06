@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Very Simple Web App</title>
+    <style>
+        body {background-color: mediumaquamarine;
+              text-align: center;
+
+        }
+        .home_button{
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="login_page">Login</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="signup_page">Signup</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="change_password">Change Password</a></button><br>
+
+{% endblock %}
+
+

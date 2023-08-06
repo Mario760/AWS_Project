@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Configure MemCache</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('auto_resize_pool') }}" method="post">
+    <label>Auto Resize Pool Configuration</label>
+
+    <p>Current Node Count: <a id="clicks">{{ pool_count }}</a></p>
+
+    <label>Max Miss Rate threshold:</label>
+    <input type="text" name="Max_Miss_Rate_threshold"/><br>
+
+    <label>Min Miss Rate threshold:</label>
+    <input type="text" name="Min_Miss_Rate_threshold"/><br>
+
+    <label>Ratio by which to expand the pool:</label>
+    <input type="text" name="Ratio_by_which_to_expand_the_pool"/><br>
+
+    <label>Ratio by which to shrink the pool:</label>
+    <input type="text" name="Ratio_by_which_to_shrink_the_pool"/><br>
+
+    <input type="submit" value="configure_auto_resize_pool"/>
+</form>
+{% endblock %}

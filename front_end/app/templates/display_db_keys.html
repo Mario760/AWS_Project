@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Display Database Keys</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('display_db_keys') }}" method="post">
+    <h1>display_db_keys:</h1>
+    <table id="data" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Keys</th>
+            <th>Image</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for result in pairs %}
+        <tr>
+            <td>{{ result[0] }}</td>
+            <td>{{ result[1] }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</form>
+
+<style>
+    table, table tr th, table tr td {
+        border: 1px solid;
+    }
+
+    table {
+        width: 200px;
+        min-height: 25px;
+        line-height: 25px;
+        text-align: center;
+        border-collapse: collapse;
+    }
+</style>
+{% endblock %}

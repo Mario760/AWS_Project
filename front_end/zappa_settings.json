@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "app_function": "app.webapp",
+        "aws_region": "us-east-1",
+        "profile_name": "default",
+        "project_name": "front-end",
+        "runtime": "python3.8",
+        "s3_bucket": "zappa-ece1779-a3",
+	"api_key_required": false,
+	"certificate_arn": "arn:aws:acm:us-east-1:600441427646:certificate/86d3690a-72cc-4725-a324-eeae3449545b",
+	"domain": "ece1779-a3-test.com"
+
+    }
+}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Upload Photos</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('put') }}" method="post" enctype="multipart/form-data">
+    <label>key:</label>
+    <input type="text" name="put_key"/>
+    <label>value:</label>
+    <input type="file" accept="image/*" name="put_file"/>
+    <input type="submit" value="put"/>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Very Simple Web App</title>
+    <style>
+        body {background-color: mediumaquamarine;
+              text-align: center;
+
+        }
+        .home_button{
+            display: none;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}     
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="get_keys">Get Keys</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="upload_photos">Upload Photos</a></button><br>
+    <!-- <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="invalidate_keys">Invalidate Keys</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="clear_memcache">Clear Memcache</a></button><br> -->
+    <!-- <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="display_db_keys">Display Database Keys</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="display_memcache_keys">Display Memcache Keys</a></button><br> -->
+
+    <!-- <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="config_memcache">Configure Memcache</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="get_memcache_stats">Get Memcache stats</a></button><br> -->
+
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="recognition">AI Image Recognition</a></button><br>
+
+{% endblock %}
+
+

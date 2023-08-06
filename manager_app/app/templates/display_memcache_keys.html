@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Display MemCache Keys</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('display_memcache_keys') }}" method="post">
+    <label>Display_memcache_keys:</label>
+    <input type="text" name="instance_id"/>
+    <input type="submit" value="display_memcache_keys"/>
+</form>
+{% endblock %}

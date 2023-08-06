@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Very Simple Web App</title>
+    <style>
+        body {background-color: mediumaquamarine;
+              text-align: center;
+
+        }
+        .home_button{
+            display: none;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="render_labels">Label Recognition</a></button><br>
+    <button style="height:65px;width:200px;margin:20px;font-size: 20px;"><a href="render_text">Text Recognition</a></button><br>
+
+{% endblock %}

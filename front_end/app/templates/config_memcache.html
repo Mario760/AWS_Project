@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Configure MemCache</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('configure_memcache') }}" method="post">
+    <label>Configure_MemCache:</label>
+    <input type="text" name="capacity"/>
+    <select name="rep_policy" id="policy">
+        <option value="RR">Random Replacement</option>
+        <option value="LRU">Least Recently Used</option>
+    </select>
+    <input type="submit" value="configure_memcache"/>
+</form>
+{% endblock %}

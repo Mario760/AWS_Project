@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Database!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 80vh;
+            margin: auto;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<h1>{{where}}</h1>
+    <div class="imgbox">
+    <center><h3>Image</h3><img class="center-fit" src="{{ user_image }}"></center>
+    </div>
+    <ol>
+        {% for row in results %}
+            <li>{{row}}</li>
+        {%endfor%}
+    </ol>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Database!</title>
+{% endblock %}
+
+{% block content %}
+<h1>Display all Keys in {{where}}</h1>
+    <ol>
+        {% for row in pairs %}
+            <li>{{row[0]}}</li>
+        {%endfor%}
+    </ol>
+{% endblock %}

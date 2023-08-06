@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Delete all Data</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('delete')}}" method="post">
+    <label>Delete all application data (including RDS and S3):</label>
+    <input type="submit" value="delete all data" />
+</form>
+{% endblock %}

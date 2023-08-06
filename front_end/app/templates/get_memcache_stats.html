@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Get MemCache Stats</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('get_memcache_stats') }}" method="post">
+    <label>Memcache_stats:</label>
+    <input type="submit" value="get memcache_stats"/>
+</form>
+{% endblock %}

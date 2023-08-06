@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <title>Invalidate Keys</title>
+{% endblock %}
+
+{% block content %}
+<form action="{{ url_for('invalidateKey') }}" method="post">
+    <label>invalidateKey:</label>
+    <input type="text" name="invalidate_key"/>
+    <input type="submit" value="invalidate"/>
+</form>
+{% endblock %}

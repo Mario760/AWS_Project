@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chart</title>
+    <script src="https://cdn.staticfile.org/Chart.js/3.9.1/chart.js"></script>
+</head>
+<body>
+    <div style="width:800px; height: 400px; margin: auto">
+        <canvas id="myChart"></canvas>
+    </div>
+<script>
+    const ctx = document.getElementById('myChart');
+    const labels = {{ no_nodes }};
+    const data = {
+        labels: labels,
+        datasets: [{
+            data: {{ miss_rate }},
+            fill: false,
+            borderColor: 'blue',
+            backgroundColor: ['red'],
+            pointStyle: 'circle',
+            pointRadius: 6,
+            pointHoverRadius: 10,
+            tension: 0.1
+        }]
+    };
+    const config = {
+        type: 'line',
+        data: data,
+        options: {
+
+            responsive: true,
+
+            interaction: {
+                intersect: false,
+            },
+            plugins: {
+                title: {
+                    display: true,
+                    text: 'Miss Rate VS Number of Nodes'
+                },
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                x: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Miss Rate'
+                    }
+                },
+                y: {
+                    display: true,
+                    title: {
+                        display: true,
+                        text: 'Number of Nodes'
+                    }
+                }
+            }
+        }
+    };
+    const myChart = new Chart(ctx, config);
+</script>
+</body>
+</html>
